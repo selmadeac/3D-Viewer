@@ -6,6 +6,7 @@ It meets the following functional requirements:
 - The system represents each point as a structure with main (x,y,z,intensity) and auxiliary attributes(index)
 - The system can represent the space as either point cloud, grid maps (occupancy grid, elevation map) or voxels (cuboid or multi volumetric grid)
 
+The used Coordinate system:
 
 
 Dependencies:

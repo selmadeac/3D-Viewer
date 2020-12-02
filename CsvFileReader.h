@@ -7,10 +7,10 @@
 #include <string>
 #include <stdlib.h>
 
-
 using namespace std;
-
-
+/*
+* Reads a CSV file - applyies transforms on points(rotations or translations) - if any - and returns a Point Cloud array
+*/
 class ReadCSVFiles {
 	
 private:

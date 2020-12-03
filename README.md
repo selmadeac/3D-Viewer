@@ -1,5 +1,5 @@
 # 3D-Viewer
-3D viewer is a free framework for visualising a 3D point clouds coming from a Velodyne sensor writtten in C++.
+3D viewer is a free framework for visualizing a 3D point clouds coming from a Velodyne sensor writtten in C++.
 
 It meets the following functional requirements:
 - Given a binary file or a csv file or a txt file with 3D points and auxiliary points information, the system reads the file and stores the 3D points in an array.

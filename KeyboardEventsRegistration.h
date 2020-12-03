@@ -7,6 +7,7 @@
 
 using namespace pcl;
 using namespace std;
+  
 
 int visualization_type = 0;
 

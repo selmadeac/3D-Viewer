@@ -7,7 +7,7 @@ It meets the following functional requirements:
 - The system can represent the space as either point cloud, grid maps (occupancy grid, elevation map) or voxels (cuboid or multi volumetric grid)
 
 The used Coordinate system:
-
+Standard System for PCL Library
 
 Dependencies:
 - PointCloud Library

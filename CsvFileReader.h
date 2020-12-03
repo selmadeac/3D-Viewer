@@ -2,7 +2,7 @@
 
 #include "pcl/pcl_config.h"
 #include "custom_point.hpp"
-#include<fstream>
+#include <fstream>
 #include <dirent.h>
 #include <string>
 #include <stdlib.h>
@@ -18,7 +18,14 @@ private:
 	typedef boost::tokenizer<boost::char_separator<char>> tokenizer;
 	
 	
+	
 public:
+
+	ReadCSVFiles(){}
+	
+	ReadCSVFiles(Eigen::Matrix4d T_mat){
+		this->T_mat = T_mat
+	}
 
 /* Reads a CSV file with 3D points organised as follows: the rows represent the 3D points, and the columns represent information about each point
 *  IN: filename - path to the csv file

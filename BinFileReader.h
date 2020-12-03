@@ -4,18 +4,16 @@
 #include <fstream>
 using namespace std;
 
-#define NR_0s_FILE_TITLE 10
 
 class BinFileReader{
 public:
 
-	void getCloud(std::string filepath, pcl::PointCloud<PointCustom> &my_cloud) {
+	void getCloudVeloFromBin(std::string filepath, pcl::PointCloud<PointCustom> &my_cloud) {
 		std::string filename = filepath
 
-
-		float *velodyneData = new float[1000000];
+		float *velodyneData = new float[MAX_NUMBER_OF_POINTS];
 		FILE *stream = fopen(filename.c_str(), "rb");
-		int num = fread(velodyneData, sizeof(float), 1000000, stream) / 4;
+		int num = fread(velodyneData, sizeof(float), MAX_NUMBER_OF_POINTS, stream) / 4;
 		fclose(stream);
 
 		my.clear();

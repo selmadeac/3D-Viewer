@@ -114,10 +114,12 @@ public:
 				Visualization_OriginalCloud(cloud_viewer_, handler_, myCloud, vlp_could_name);
 				break;
 			case 1: //press g
+				//view occupancy grid
 				Visualization_OccupancyGridCloud(cloud_viewer_, handler_, myCloud, vlp_could_name,occup_grid);
 				break;
 			case 2: //press s
-
+				//view elevation map  grid
+				Visualization_ElevationGridCloud(cloud_viewer_, handler_, myCloud, vlp_could_name,occup_grid);
 				break;
 			case 3: //press q
 
@@ -178,6 +180,29 @@ public:
 
 		g->buildOccupancyGrid(P);
 		g->plotOccupancyGridMap();
+
+		CloudConstPtr cloud;
+		cloud = P.makeShared();
+		handler.setInputCloud(cloud);
+		if (!viz->updatePointCloud(cloud, handler, PCL_name)) {
+			viz->addPointCloud(cloud, handler, PCL_name);
+		}
+
+		P.clear();
+
+		g->resetAll();
+
+		boost::this_thread::sleep(boost::posix_time::microseconds(100));
+	}
+	
+	
+	void Visualization_ElevationGridCloud(boost::shared_ptr<pcl::visualization::PCLVisualizer> viz, pcl::visualization::PointCloudColorHandler<PointCustom> &handler, PointCloud<PointCustom> &P, string PCL_name, OccupancyGrid *g) {
+
+		viz->spinOnce();
+		viz->removePointCloud(PCL_name);
+
+		g->buildOccupancyGridWithMinMaxValues(P);
+		g->plotHeightJumpGridMap();
 
 		CloudConstPtr cloud;
 		cloud = P.makeShared();

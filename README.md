@@ -13,6 +13,6 @@ The used Coordinate system:
 Standard for PCL Library
 
 Dependencies:
-- PointCloud Library
+- PointCloud Library 1.8
 - Eigen 3.0
-- OpenCV
+- OpenCV 4.5
